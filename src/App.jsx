@@ -5,7 +5,6 @@ import Category from "./pages/Category";
 import CategoryProduct from "./pages/CategoryProduct";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import WelcomePage from "./pages/WelcomePage";
 import CartPage from "./pages/CartPage";
 import OrderDetailsPages from "./pages/OrderDeatailsPages"
 import OrdersPage from "./pages/OrderPage";
@@ -18,9 +17,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/register" element={<RegisterPage />} />
-
-        <Route path="/" element={<WelcomePage />} />
+        <Route path="/" element={<RegisterPage />} />
         <Route element = {<MainLayout/>}>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/orders/:orderId"element={<OrderDetailsPages />}/>
