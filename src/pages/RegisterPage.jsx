@@ -58,11 +58,7 @@ export default function RegisterPage() {
 
     );
 
-    const cart =await getCartByUserId(response.userId);
-        console.log("cart.id is");
-        console.log(cart.id);
-
-    localStorage.setItem("cartId",cart.id);
+    
 
 
 
