@@ -1,5 +1,4 @@
-import {BrowserRouter,Routes,Route} from "react-router-dom";
-
+import {BrowserRouter,Routes,Route,Navigate} from "react-router-dom";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import CategoryProduct from "./pages/CategoryProduct";
@@ -14,10 +13,10 @@ import PaymentPage from"./pages/PaymentPage";
 
 function App() {
   return (
-      <Routes>
+      <Routes >
         <Route path="/login" element={<LoginPage />} />
-
-        <Route path="/" element={<RegisterPage />} />
+    <Route path="/" element={<Navigate to="/register" replace />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route element = {<MainLayout/>}>
           <Route path="/cart" element={<CartPage />} />
           <Route path="/orders/:orderId"element={<OrderDetailsPages />}/>
