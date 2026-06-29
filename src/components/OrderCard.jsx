@@ -2,7 +2,7 @@ import {Card,Box,Typography,Button,LinearProgress,Avatar,Stack,Divider} from "@m
 
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:8080";
+const API = "https://happily-reward-sinless.ngrok-free.dev/api";
 
 export default function OrderCard({ order }) {
 

@@ -2,7 +2,7 @@ import {Card,Box,Typography,IconButton} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-const API="http://localhost:8080";
+const API="https://happily-reward-sinless.ngrok-free.dev/api";
 
 
 

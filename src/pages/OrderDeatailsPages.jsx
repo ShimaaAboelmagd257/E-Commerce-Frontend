@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { createPayment } from "../api/paymentService";
 
 import {getOrdersByUserId,confirmOrder, getOrderById} from "../api/orderService";
-const API = "http://localhost:8080";
+const API = "https://happily-reward-sinless.ngrok-free.dev/api";
 
 export default function OrdersPage() {
     const navigate = useNavigate();
