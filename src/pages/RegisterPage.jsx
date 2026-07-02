@@ -16,7 +16,9 @@ export default function RegisterPage() {
     const [nameError, setNameError] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
-
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.#^()_+=-]).{8,}$/;
 
 
   const handleRegister = async(e)=>{
@@ -133,15 +135,19 @@ export default function RegisterPage() {
               fullWidth
               placeholder="Email"
               value={email}
-              onChange={(e)=>{setEmail(e.target.value);
+              onChange={(e)=>{
                 const value = e.target.value;
 
-                if (!value.includes("@")) {
+                setEmail(e.target.value);
+
+                if (!emailRegex.test(value)) {
                 setEmailError("Please enter a valid email address.");
                 } else {
                     setEmailError("");
                 }
               }}
+                error={!!emailError}
+                helperText={emailError}
               sx={{
                 mb:3,
                 "& .MuiOutlinedInput-root":{
@@ -159,13 +165,15 @@ export default function RegisterPage() {
               onChange={(e)=>{setPassword(e.target.value);
                   const value = e.target.value;
 
-                  if (value.length < 8) {
-                    setPasswordError("Password must be at least 8 characters.");
+                  if (!passwordRegex.test(value)) {
+                    setPasswordError("Password must contain uppercase, lowercase, number and special characte");
                   } else {
                   setPasswordError("");
                   }
 
               }}
+                error={!!passwordError}
+                helperText={passwordError}
               sx={{
                 mb:4,
                 "& .MuiOutlinedInput-root":{
