@@ -59,7 +59,7 @@ export default function ProductCard({product}) {
       <CardMedia
         component="img"
         height="260"
-        image={`${API_BASE_URL}${product.image}`}   
+        image={porduct.image}   
          alt={product.name}
       />
       

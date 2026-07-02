@@ -26,7 +26,7 @@ function CategoryCard({ category }) {
             <CardMedia
                 component="img"
                 height="450"
-                image={`${API_BASE_URL}${category.image}`}   
+                image={category.image}   
                 alt={category.name}
             />
 

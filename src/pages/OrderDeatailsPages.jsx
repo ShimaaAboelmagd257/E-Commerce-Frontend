@@ -322,7 +322,7 @@ Proceed To Payment
         }>
             <Box
                 component="img"
-                src={`${API_BASE_URL}${item.productImage}`}
+                src={item.productImage}
                 sx={{
                     width: 90,
                     height: 90,

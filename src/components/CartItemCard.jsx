@@ -29,7 +29,7 @@ alignItems:"center"
 
 <Box
 component="img"
-src={`${API_BASE_URL}${item.productImage}`}
+src={item.productImage}
 sx={{
 width:110,
 height:110,
