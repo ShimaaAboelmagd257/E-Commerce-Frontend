@@ -147,7 +147,6 @@ buttonAction =
             sx={{
               flex: 1,
               overflow: "hidden",
-              borderRadius: "30px 0 0 30px",
 
               display: "flex",
             }}
@@ -169,13 +168,13 @@ buttonAction =
     
           <Card
             sx={{
-              flex: 1,
-              boxShadow: 0,
-              borderRadius: "20px",
+               flex: 1,
+    borderRadius: "30px 0 0 30px",
+    boxShadow: 0,
+    display: "flex",
+    flexDirection: "column",
+    bgcolor: "#ffffff",
 
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
             }}
           >
             <Box

@@ -70,7 +70,6 @@ export default function LoginPage() {
         sx={{
           flex:1,
           overflow:"hidden",
-          borderRadius:"30px 0 0 30px",
           backgroundImage:`url(${LoginImage})`,
           backgroundSize:"cover",
           backgroundPosition:"center"

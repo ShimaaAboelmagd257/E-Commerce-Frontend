@@ -64,13 +64,15 @@ export default function OrdersPage() {
   
         <Card
           sx={{
-            flex: 1,
-            boxShadow: 0,
-            borderRadius: 0,
-            display: "flex",
-            borderRadius: "30px 0 0 30px",
             justifyContent: "center",
             alignItems: "center",
+                flex: 1,
+    borderRadius: "30px 0 0 30px",
+    boxShadow: 0,
+    display: "flex",
+    flexDirection: "column",
+    bgcolor: "#ffffff",
+
           }}
         >
           <Box

@@ -57,7 +57,6 @@ const passwordRegex =
           flex:1,
           backgroundImage:`url(${LoginImage})`,
           backgroundSize:"cover",
-          borderRadius: "30px 0 0 30px",
           backgroundPosition:"center"
         }}
       />
