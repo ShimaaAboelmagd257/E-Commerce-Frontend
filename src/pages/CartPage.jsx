@@ -101,6 +101,7 @@ const handleRemoveCartItem = async (productId) => {
           boxShadow: 0,
           borderRadius: 0,
           display: "flex",
+          borderRadius: "30px 0 0 30px",
           justifyContent: "center",
           alignItems: "center",
         }}

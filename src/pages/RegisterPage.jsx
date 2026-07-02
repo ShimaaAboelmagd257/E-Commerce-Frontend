@@ -66,6 +66,7 @@ const passwordRegex =
         sx={{
           flex:1,
           display:"flex",
+          borderRadius: "30px 0 0 30px",
           flexDirection:"column",
           boxShadow:0,
           borderRadius:0,

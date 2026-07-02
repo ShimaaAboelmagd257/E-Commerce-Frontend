@@ -171,6 +171,7 @@ buttonAction =
               flex: 1,
               boxShadow: 0,
               borderRadius: "20px",
+              borderRadius: "30px 0 0 30px",
 
               display: "flex",
               justifyContent: "center",
