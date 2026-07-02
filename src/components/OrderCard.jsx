@@ -2,7 +2,7 @@ import {Card,Box,Typography,Button,LinearProgress,Avatar,Stack,Divider} from "@m
 
 import { useNavigate } from "react-router-dom";
 
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL } from "../config";
 
 export default function OrderCard({ order }) {
 
