@@ -8,3 +8,4 @@ const API_BASE_URL = axios.create({
         "Content-Type": "image/jpeg"
     }
 });
+export default API_BASE_URL;
