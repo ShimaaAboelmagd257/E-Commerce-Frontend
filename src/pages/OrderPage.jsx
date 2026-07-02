@@ -34,7 +34,6 @@ export default function OrdersPage() {
         sx={{
           display: "flex",
           height: "100vh",
-        bgcolor:"#000000",
         }}
       >
         {/* LEFT IMAGE */}
@@ -64,8 +63,6 @@ export default function OrdersPage() {
   
         <Card
           sx={{
-            justifyContent: "center",
-            alignItems: "center",
                 flex: 1,
     borderRadius: "30px 0 0 30px",
     boxShadow: 0,

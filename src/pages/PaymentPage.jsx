@@ -138,7 +138,6 @@ buttonAction =
           sx={{
             display: "flex",
             height: "100vh",
-            bgcolor: "#000000",
           }}
         >
           {/* LEFT IMAGE */}

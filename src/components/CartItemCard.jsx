@@ -6,7 +6,7 @@ import { API_BASE_URL } from "../config";
 
 
 
-export default function CartItemCard({item,onDelete}){
+export default function CartItemCard({item,onIncrease,onDecrease,onDelete}){
 
 return(
 
@@ -89,7 +89,7 @@ py:.5
 }}
 >
 
-<IconButton size="small">
+<IconButton size="small" onClick={()=> onDecrease(item)}>
 <RemoveIcon/>
 </IconButton>
 
@@ -101,7 +101,7 @@ mx:2
 {item.quantity}
 </Typography>
 
-<IconButton size="small">
+<IconButton size="small" onClick={()=> onIncrease(item)}>
 <AddIcon/>
 </IconButton>
 

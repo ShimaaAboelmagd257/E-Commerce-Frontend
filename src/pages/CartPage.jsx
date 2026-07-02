@@ -1,6 +1,6 @@
 import {useEffect, useState}from "react";
 import {Card,Typography,Box,Divider}from "@mui/material";
-import {getCartById, getCartByUserId,removeCartItem}from "../api/cartService";
+import {getCartById, getCartByUserId,removeCartItem,updateCartItemQauntity}from "../api/cartService";
 import CartItemCard from "../components/CartItemCard";
 import { createOrderFromCart } from "../api/orderService";
 import Button from "@mui/material/Button";
@@ -16,8 +16,6 @@ export default function CartPage()
     const user = JSON.parse(localStorage.getItem("user"));
 
     const handleCheckout = async () => {
-    const cart = await getCartByUserId(user.id);
-    
     const order =await createOrderFromCart(cart.id);
     navigate(`/orders` );
     };
@@ -40,11 +38,53 @@ const handleRemoveCartItem = async (productId) => {
     }
 
 };
+const handleIncrease = async (item) => {
+
+    try {
+
+        const updatedCart = await updateCartItemQuantity(
+            cart.id,
+            item.productId,
+            item.quantity + 1
+        );
+
+        setCart(updatedCart);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+};
+const handleDecrease = async (item) => {
+
+    try {
+
+        if (item.quantity === 1) {
+            return;
+        }
+
+        const updatedCart = await updateCartItemQuantity(
+            cart.id,
+            item.productId,
+            item.quantity - 1
+        );
+
+        setCart(updatedCart);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+};
     useEffect(() => {
 
         const loadCart = async () => {
             console.log(user.id);
-            if (!user.id) {return;}
+            if (!user?.id) {return;}
         try {
             const cart = await getCartByUserId(user.id);
             setCart(cart);
@@ -67,7 +107,6 @@ const handleRemoveCartItem = async (productId) => {
       sx={{
         display: "flex",
         height: "100vh",
-        bgcolor:"#000000",
       }}
     >
       {/* LEFT IMAGE */}
@@ -98,8 +137,6 @@ const handleRemoveCartItem = async (productId) => {
       <Card
         sx={{
 
-          justifyContent: "center",
-          alignItems: "center",
               flex: 1,
     borderRadius: "30px 0 0 30px",
     boxShadow: 0,
@@ -164,7 +201,8 @@ const handleRemoveCartItem = async (productId) => {
 <Box
     sx={{
     width: "100%",
-    mt: 5
+    mt: 5,
+        px: 4
         }}
 >
 
@@ -194,10 +232,12 @@ const handleRemoveCartItem = async (productId) => {
 
             {cart.items.map(item=>(
                 <CartItemCard
-                    key={item.productId}
-                    item={item}
-                    onDelete={handleRemoveCartItem}
-                />
+    key={item.productId}
+    item={item}
+    onIncrease={handleIncrease}
+    onDecrease={handleDecrease}
+    onDelete={handleDelete}
+/>
             ))}
 
         </Box>
