@@ -45,9 +45,8 @@ function HeroSlider() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: "white",
         position: "relative",
-        borderRadius: "20px"
+        padding: "3px"
       }}
     >
       {/* Dark overlay */}
@@ -66,7 +65,7 @@ function HeroSlider() {
 
       {/* Text */}
       <Box sx={{ zIndex: 1, textAlign: "center" }}>
-        <Typography variant="h1" fontWeight="bold">
+        <Typography variant="h1" fontWeight="bold" color="white">
           {slide.title}
         </Typography>
 
