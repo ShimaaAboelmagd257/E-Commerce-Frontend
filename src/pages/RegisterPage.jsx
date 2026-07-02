@@ -45,6 +45,8 @@ const passwordRegex =
       sx={{
         display:"flex",
         height:"100vh",
+        bgcolor:"#000000",
+
         padding: 0
       }}
     >

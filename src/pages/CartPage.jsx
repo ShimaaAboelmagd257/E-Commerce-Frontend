@@ -67,7 +67,7 @@ const handleRemoveCartItem = async (productId) => {
       sx={{
         display: "flex",
         height: "100vh",
-        bgcolor: "#fff",
+        bgcolor:"#000000",
       }}
     >
       {/* LEFT IMAGE */}
