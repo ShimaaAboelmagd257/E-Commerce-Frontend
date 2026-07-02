@@ -13,62 +13,26 @@ export default function RegisterPage() {
   const [fullName,setFullName] = useState("");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+    const [nameError, setNameError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
+
 
   const handleRegister = async(e)=>{
 
     e.preventDefault();
 
    try {
-
-
-
-      const response = await register(
-
-        fullName,
-
-        email,
-
-        password
-
-      );
-
+      const response = await register(fullName,email,password);
       console.log("REGISTER RESPONSE", response);
-
-      localStorage.setItem(
-
-        "token",
-
-        response.token
-
-      );
-
+      localStorage.setItem("token",response.token);
       console.log(response.token);
-
-      localStorage.setItem(
-
-      "user",JSON.stringify({
-
-        id: response.userId,
-
-        email: response.email,
-
-        name: response.name
-
-    })
-
-    );
-
-    
-
-
-
+      localStorage.setItem("user",JSON.stringify({id: response.userId,email: response.email,name: response.name}));
       navigate("/home");
-
     }catch(err){
-
       alert("Registration Failed");
       console.log(err);
-
     }
 
   };
@@ -142,7 +106,17 @@ export default function RegisterPage() {
               fullWidth
               placeholder="Full Name"
               value={fullName}
-              onChange={(e)=>setFullName(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                setFullName(value);
+                if (value.trim().length < 2) {
+                  setNameError("Full name must be at least 2 characters.");
+                } else {
+                  setNameError("");
+                }
+              }}
+              error={!!nameError}
+              helperText={nameError}
               sx={{
                 mb:3,
                 "& .MuiOutlinedInput-root":{
@@ -150,13 +124,23 @@ export default function RegisterPage() {
                   height:55
                 }
               }}
+              
             />
+            
+            
 
             <TextField
               fullWidth
               placeholder="Email"
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e)=>{setEmail(e.target.value);
+
+                if (!email.includes("@")) {
+                setEmailError("Please enter a valid email address.");
+                } else {
+                    setEmailError("");
+                }
+              }}
               sx={{
                 mb:3,
                 "& .MuiOutlinedInput-root":{
@@ -171,7 +155,14 @@ export default function RegisterPage() {
               type="password"
               placeholder="Password"
               value={password}
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e)=>{setPassword(e.target.value);
+                  if (password.length < 8) {
+                    setPasswordError("Password must be at least 8 characters.");
+                  } else {
+                  setPasswordError("");
+                  }
+
+              }}
               sx={{
                 mb:4,
                 "& .MuiOutlinedInput-root":{

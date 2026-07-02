@@ -20,6 +20,9 @@ export default function LoginPage() {
 
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+          const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
 
   const handleLogin = async(e)=>{
 
@@ -133,7 +136,15 @@ export default function LoginPage() {
         fullWidth
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={(e) =>{ setEmail(e.target.value);
+
+                if (!email.includes("@")) {
+                setEmailError("Please enter a valid email address.");
+                } else {
+                    setEmailError("");
+                }
+              }}
+
         sx={{
           mb: 3,
           "& .MuiOutlinedInput-root": {
@@ -148,7 +159,14 @@ export default function LoginPage() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {setPassword(e.target.value);
+                            if (password.length < 8) {
+                    setPasswordError("Password must be at least 8 characters.");
+                  } else {
+                  setPasswordError("");
+                  }
+
+              }}
         sx={{
           mb: 4,
           "& .MuiOutlinedInput-root": {
