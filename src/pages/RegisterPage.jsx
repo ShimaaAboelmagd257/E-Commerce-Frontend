@@ -69,8 +69,9 @@ const passwordRegex =
           flex:1,
           display:"flex",
           flexDirection:"column",
+              borderRadius: "30px 0 0 30px",
+
           boxShadow:0,
-          borderRadius:0,
         }}
       >
 
