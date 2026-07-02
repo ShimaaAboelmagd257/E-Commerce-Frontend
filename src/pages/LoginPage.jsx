@@ -10,8 +10,8 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import LoginImage from "../assets/logo2.jpg"; // Your left image
-import Logo from "../assets/logo1.jpg"; // Your logo
+import LoginImage from "../assets/logo2.jpg"; 
+import Logo from "../assets/logo1.jpg"; 
 import Navbar from "../components/SignInNavbar";
 
 export default function LoginPage() {

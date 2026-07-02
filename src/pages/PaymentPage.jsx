@@ -138,7 +138,7 @@ buttonAction =
           sx={{
             display: "flex",
             height: "100vh",
-        bgcolor:"#000000",
+            bgcolor: "#000000",
           }}
         >
           {/* LEFT IMAGE */}
@@ -147,7 +147,8 @@ buttonAction =
             sx={{
               flex: 1,
               overflow: "hidden",
-              backgroundColor: "#f8f8f8",
+              borderRadius: "30px 0 0 30px",
+
               display: "flex",
             }}
           >
@@ -171,7 +172,6 @@ buttonAction =
               flex: 1,
               boxShadow: 0,
               borderRadius: "20px",
-              borderRadius: "30px 0 0 30px",
 
               display: "flex",
               justifyContent: "center",

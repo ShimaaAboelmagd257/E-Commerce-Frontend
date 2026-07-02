@@ -46,7 +46,6 @@ const passwordRegex =
         display:"flex",
         height:"100vh",
         bgcolor:"#000000",
-
         padding: 0
       }}
     >
@@ -58,6 +57,7 @@ const passwordRegex =
           flex:1,
           backgroundImage:`url(${LoginImage})`,
           backgroundSize:"cover",
+          borderRadius: "30px 0 0 30px",
           backgroundPosition:"center"
         }}
       />
@@ -68,7 +68,6 @@ const passwordRegex =
         sx={{
           flex:1,
           display:"flex",
-          borderRadius: "30px 0 0 30px",
           flexDirection:"column",
           boxShadow:0,
           borderRadius:0,
