@@ -170,7 +170,8 @@ buttonAction =
             sx={{
               flex: 1,
               boxShadow: 0,
-              borderRadius: 0,
+              borderRadius: "20px",
+
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
