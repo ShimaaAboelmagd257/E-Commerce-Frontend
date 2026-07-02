@@ -59,7 +59,7 @@ export default function ProductCard({product}) {
       <CardMedia
         component="img"
         height="260"
-        image={porduct.image}   
+        image={product.image}   
          alt={product.name}
       />
       
