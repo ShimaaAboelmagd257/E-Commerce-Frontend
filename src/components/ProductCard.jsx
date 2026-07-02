@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import React, { useState } from "react";
 import { addItemToCart } from "../api/cartService";
 import Snackbar from "@mui/material/Snackbar";
-import { API_BASE_URL } from "../config";
+import { API_BASE_URL } from "../API_BASE_URL";
 import { getCartByUserId } from "../api/cartService";
 
 export default function ProductCard({product}) {

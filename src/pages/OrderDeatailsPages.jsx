@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { createPayment } from "../api/paymentService";
 
 import {getOrdersByUserId,confirmOrder, getOrderById} from "../api/orderService";
-import { API_BASE_URL } from "../config";
+import { API_BASE_URL } from "../API_BASE_URL";
 
 export default function OrdersPage() {
     const navigate = useNavigate();

@@ -3,7 +3,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import { API_BASE_URL } from "../../config";
+import { API_BASE_URL } from "../../API_BASE_URL";
 
 function CategoryCard({ category }) {
     const navigate = useNavigate();
