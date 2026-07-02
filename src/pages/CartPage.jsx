@@ -14,19 +14,18 @@ export default function CartPage()
     const [cart,setCart] = useState(null);
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user"));
-
-    const handleCheckout = async () => {
-    const order =await createOrderFromCart(cart.id);
-    navigate(`/orders` );
-    };
-const handleRemoveCartItem = async (productId) => {
+    const handleDecrease = async (item) => {
 
     try {
 
+        if (item.quantity === 1) {
+            return;
+        }
 
-        const updatedCart = await removeCartItem(
+        const updatedCart = await updateCartItemQuantity(
             cart.id,
-            productId
+            item.productId,
+            item.quantity - 1
         );
 
         setCart(updatedCart);
@@ -57,18 +56,19 @@ const handleIncrease = async (item) => {
     }
 
 };
-const handleDecrease = async (item) => {
+    const handleCheckout = async () => {
+    
+    const order =await createOrderFromCart(cart.id);
+    navigate(`/orders` );
+    };
+const handleRemoveCartItem = async (productId) => {
 
     try {
 
-        if (item.quantity === 1) {
-            return;
-        }
 
-        const updatedCart = await updateCartItemQuantity(
+        const updatedCart = await removeCartItem(
             cart.id,
-            item.productId,
-            item.quantity - 1
+            productId
         );
 
         setCart(updatedCart);
@@ -84,7 +84,7 @@ const handleDecrease = async (item) => {
 
         const loadCart = async () => {
             console.log(user.id);
-            if (!user?.id) {return;}
+            if (!user.id) {return;}
         try {
             const cart = await getCartByUserId(user.id);
             setCart(cart);
@@ -107,6 +107,7 @@ const handleDecrease = async (item) => {
       sx={{
         display: "flex",
         height: "100vh",
+        bgcolor: "#fff",
       }}
     >
       {/* LEFT IMAGE */}
@@ -136,14 +137,12 @@ const handleDecrease = async (item) => {
 
       <Card
         sx={{
-
-              flex: 1,
-    borderRadius: "30px 0 0 30px",
-    boxShadow: 0,
-    display: "flex",
-    flexDirection: "column",
-    bgcolor: "#ffffff",
-
+          flex: 1,
+          boxShadow: 0,
+          borderRadius: 0,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <Box
@@ -200,10 +199,10 @@ const handleDecrease = async (item) => {
 
 <Box
     sx={{
-    width: "100%",
-    mt: 5,
-        px: 4
-        }}
+        width:"100%",
+        mt:5,
+        px:4
+    }}
 >
 
     <Typography
@@ -232,12 +231,12 @@ const handleDecrease = async (item) => {
 
             {cart.items.map(item=>(
                 <CartItemCard
-    key={item.productId}
-    item={item}
-    onIncrease={handleIncrease}
-    onDecrease={handleDecrease}
-    onDelete={handleDelete}
-/>
+                    key={item.productId}
+                    item={item}
+                    onIncrease={handleIncrease}
+                    onDecrease={handleDecrease}
+                    onDelete={handleRemoveCartItem}
+                />
             ))}
 
         </Box>
