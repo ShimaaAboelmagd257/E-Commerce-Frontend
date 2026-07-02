@@ -23,7 +23,9 @@ let buttonAction;
     
         const data =
           await getOrderStatus(orderId);
-  
+          console.log("Payment Status: ");
+          console.log(data);
+
         setStatus(data);
   
       };

@@ -23,6 +23,7 @@ function ProductList() {
 
                 setProducts(response.content);
                 setTotalPages(response.totalPages);
+                console.log(response.content);
 
             } catch (error) {
 
