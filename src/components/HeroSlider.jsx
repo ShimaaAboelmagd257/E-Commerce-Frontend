@@ -64,8 +64,8 @@ function HeroSlider() {
       />
 
       {/* Text */}
-      <Box sx={{ zIndex: 1, textAlign: "center" }}>
-        <Typography variant="h1" fontWeight="bold" color="white">
+      <Box sx={{ zIndex: 1, textAlign: "center" , color: "white"}}>
+        <Typography variant="h1" fontWeight="bold" >
           {slide.title}
         </Typography>
 
