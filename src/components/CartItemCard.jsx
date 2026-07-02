@@ -2,7 +2,7 @@ import {Card,Box,Typography,IconButton} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-const API="https://happily-reward-sinless.ngrok-free.dev/api";
+import { API_BASE_URL } from "../../config";
 
 
 
@@ -29,7 +29,7 @@ alignItems:"center"
 
 <Box
 component="img"
-src={`${API}${item.productImage}`}
+src={`${API_BASE_URL}${item.productImage}`}
 sx={{
 width:110,
 height:110,

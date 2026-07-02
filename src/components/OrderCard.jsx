@@ -2,7 +2,7 @@ import {Card,Box,Typography,Button,LinearProgress,Avatar,Stack,Divider} from "@m
 
 import { useNavigate } from "react-router-dom";
 
-const API = "https://happily-reward-sinless.ngrok-free.dev/api";
+import { API_BASE_URL } from "../../config";
 
 export default function OrderCard({ order }) {
 
@@ -74,7 +74,7 @@ export default function OrderCard({ order }) {
         }>
     <Box
         component="img"
-        src={`${API}${item.productImage}`}
+        src={`${API_BASE_URL}${item.productImage}`}
         sx={{
             width: 90,
             height: 90,

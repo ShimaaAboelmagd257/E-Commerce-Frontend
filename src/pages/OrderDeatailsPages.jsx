@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { createPayment } from "../api/paymentService";
 
 import {getOrdersByUserId,confirmOrder, getOrderById} from "../api/orderService";
-const API = "https://happily-reward-sinless.ngrok-free.dev/api";
+import { API_BASE_URL } from "../../config";
 
 export default function OrdersPage() {
     const navigate = useNavigate();
@@ -322,7 +322,7 @@ Proceed To Payment
         }>
             <Box
                 component="img"
-                src={`${API}${item.productImage}`}
+                src={`${API_BASE_URL}${item.productImage}`}
                 sx={{
                     width: 90,
                     height: 90,
