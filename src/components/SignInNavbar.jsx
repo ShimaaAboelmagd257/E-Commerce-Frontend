@@ -17,7 +17,7 @@ export default function SignInNavbar() {
       position="static"
       elevation={0}
       sx={{
-        bgcolor: "transparent",
+      backgroundColor: "#000000",
         color: "black",
         boxShadow: "none",
       }}

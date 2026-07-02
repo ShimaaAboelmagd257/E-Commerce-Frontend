@@ -134,8 +134,9 @@ export default function RegisterPage() {
               placeholder="Email"
               value={email}
               onChange={(e)=>{setEmail(e.target.value);
+                const value = e.target.value;
 
-                if (!email.includes("@")) {
+                if (!value.includes("@")) {
                 setEmailError("Please enter a valid email address.");
                 } else {
                     setEmailError("");
@@ -156,7 +157,9 @@ export default function RegisterPage() {
               placeholder="Password"
               value={password}
               onChange={(e)=>{setPassword(e.target.value);
-                  if (password.length < 8) {
+                  const value = e.target.value;
+
+                  if (value.length < 8) {
                     setPasswordError("Password must be at least 8 characters.");
                   } else {
                   setPasswordError("");
