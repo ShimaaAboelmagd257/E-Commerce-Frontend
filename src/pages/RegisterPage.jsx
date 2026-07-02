@@ -70,6 +70,7 @@ const passwordRegex =
           display:"flex",
           flexDirection:"column",
               borderRadius: "30px 0 0 30px",
+          bgcolor: "#ffffff",
 
           boxShadow:0,
         }}
