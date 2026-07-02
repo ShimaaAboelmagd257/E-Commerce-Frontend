@@ -45,6 +45,7 @@ const passwordRegex =
       sx={{
         display:"flex",
         height:"100vh",
+        padding: 0
       }}
     >
 
@@ -166,7 +167,7 @@ const passwordRegex =
                   const value = e.target.value;
 
                   if (!passwordRegex.test(value)) {
-                    setPasswordError("Password must contain uppercase, lowercase, number and special characte");
+                    setPasswordError("Password must contain uppercase, lowercase, number and special character");
                   } else {
                   setPasswordError("");
                   }
