@@ -201,7 +201,8 @@ const handleRemoveCartItem = async (productId) => {
     sx={{
         width:"100%",
         mt: 5,
-        px: 0
+        px: 0,
+        padding : "40px"
     }}
 >
 

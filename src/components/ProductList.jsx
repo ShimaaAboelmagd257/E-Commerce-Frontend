@@ -36,6 +36,7 @@ function ProductList() {
 
     const ProductSwiper = ({ title, products }) => (
     <>
+
         <Typography
             variant="h4"
             sx={{
@@ -48,6 +49,7 @@ function ProductList() {
         </Typography>
 
         <Swiper
+            modules={[Navigation]}
             spaceBetween={20}
             slidesPerView={4}
             navigation
@@ -97,7 +99,15 @@ function ProductList() {
     return (
         
         <>  
-            <ProductSwiper
+            <Box
+    sx={{
+        width:"100%",
+        mt: 5,
+        px: 0,
+        padding : "40px"
+    }}
+>
+        <ProductSwiper
         title="🆕 New Arrivals"
         products={newArrivals}
     />
@@ -116,15 +126,7 @@ function ProductList() {
         title="💸 Special Offers"
         products={specialOffers}
     />
-            <div
-                style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "15px",
-                    padding: "30px",
-                }}
-            >
-                <Typography
+        <Typography
                 variant="h3"
                 sx={{
                     mb:4,
@@ -133,6 +135,15 @@ function ProductList() {
             >
                 Explore 
             </Typography>
+            <div
+                style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "15px",
+                    padding: "30px",
+                }}
+            >
+
                 {products.map(product => (
                     <ProductCard
                         product = {product}
@@ -164,6 +175,7 @@ function ProductList() {
                     }}
                 />
             </div>
+            </Box>
         </>
     );
 }
