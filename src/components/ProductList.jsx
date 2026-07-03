@@ -50,7 +50,7 @@ function ProductList() {
 
         <Swiper
             modules={[Navigation]}
-            spaceBetween={20}
+            spaceBetween={10}
             slidesPerView={4}
             navigation
             breakpoints={{
@@ -129,7 +129,6 @@ function ProductList() {
         <Typography
                 variant="h3"
                 sx={{
-                    mb:4,
                     fontWeight: "bold",
                 }}
             >
