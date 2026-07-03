@@ -46,7 +46,7 @@ function HeroSlider() {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
-        padding: "3px"
+        padding: "6px"
       }}
     >
       {/* Dark overlay */}
@@ -58,8 +58,6 @@ function HeroSlider() {
           width: "100%",
           height: "100%",
           bgcolor: "rgba(0,0,0,0.5)",
-                  borderRadius: "20px"
-
         }}
       />
 

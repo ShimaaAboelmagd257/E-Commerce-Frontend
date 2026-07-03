@@ -19,7 +19,6 @@ function Navbar() {
       backgroundColor: "#000000",
       color: "#ffffff",
       borderBottom: "1px solid #e0e0e0",
-          borderRadius: "20px",
       
   }}
 >
@@ -46,9 +45,13 @@ function Navbar() {
 
         {/* Push menu items to the right */}
         <Box sx={{ flexGrow: 1 }} />
-        <Button color="inheret" startIcon={<ShoppingCartIcon />}
+        <Button color="inheret" startIcon={<CategoryIcon />}
         component={Link} to="/categories">
           Categories
+        </Button>
+        <Button color="inherit" startIcon={<ShoppingBagIcon />}
+        component={Link} to="/orders">
+         Orders
         </Button>
 
         <Button color="inherit" startIcon={<FavoriteIcon />}>

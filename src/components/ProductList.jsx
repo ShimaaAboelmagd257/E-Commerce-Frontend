@@ -3,12 +3,68 @@ import Pagination from "@mui/material/Pagination";
 
 import ProductCard from "./ProductCard";
 import { getProducts } from "../api/productService";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Navigation } from "swiper/modules";
 function ProductList() {
 
     const [products, setProducts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
+
+
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [newArrivals, setNewArrivals] = useState([]);
+    const [bestSellers, setBestSellers] = useState([]);
+    const [specialOffers, setSpecialOffers] = useState([]);
+
+    useEffect(() => {
+        if (products.length === 0) return;
+
+        const shuffled = [...products].sort(() => Math.random() - 0.5);
+
+        setFeaturedProducts(shuffled.slice(0, 8));
+        setNewArrivals([...shuffled].reverse().slice(0, 8));
+        setBestSellers([...shuffled].sort(() => Math.random() - 0.5).slice(0, 8));
+        setSpecialOffers([...shuffled].sort(() => Math.random() - 0.5).slice(0, 8));
+    }, [products]);
+
+    const ProductSwiper = ({ title, products }) => (
+    <>
+        <Typography
+            variant="h4"
+            sx={{
+                mt: 5,
+                mb: 2,
+                fontWeight: "bold",
+            }}
+        >
+            {title}
+        </Typography>
+
+        <Swiper
+            spaceBetween={20}
+            slidesPerView={4}
+            navigation
+            breakpoints={{
+                0: { slidesPerView: 1 },
+                600: { slidesPerView: 2 },
+                900: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 },
+            }}
+        >
+            {products.map(product => (
+                <SwiperSlide key={product.id}>
+                    <ProductCard product={product}/>
+                </SwiperSlide>
+            ))}
+        </Swiper>
+    </>
+);
 
     useEffect(() => {
 
@@ -38,7 +94,27 @@ function ProductList() {
     }, [page]);
 
     return (
-        <>
+        
+        <>  
+            <ProductSwiper
+        title="🆕 New Arrivals"
+        products={newArrivals}
+    />
+
+    <ProductSwiper
+        title="⭐ Best Sellers"
+        products={bestSellers}
+    />
+
+    <ProductSwiper
+        title="🔥 Featured Products"
+        products={featuredProducts}
+    />
+
+    <ProductSwiper
+        title="💸 Special Offers"
+        products={specialOffers}
+    />
             <div
                 style={{
                     display: "flex",
@@ -47,6 +123,15 @@ function ProductList() {
                     padding: "30px",
                 }}
             >
+                <Typography
+                variant="h3"
+                sx={{
+                    mb:4,
+                    fontWeight: "bold",
+                }}
+            >
+                Explore 
+            </Typography>
                 {products.map(product => (
                     <ProductCard
                         product = {product}

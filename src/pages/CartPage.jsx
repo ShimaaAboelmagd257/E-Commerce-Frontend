@@ -200,8 +200,8 @@ const handleRemoveCartItem = async (productId) => {
 <Box
     sx={{
         width:"100%",
-        mt:5,
-        px:4
+        mt: 5,
+        px: 0
     }}
 >
 
