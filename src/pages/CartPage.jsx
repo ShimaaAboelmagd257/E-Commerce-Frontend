@@ -29,6 +29,7 @@ export default function CartPage()
         );
 
         setCart(updatedCart);
+        console.log("Handle Decrease!!" , updatedCart);
 
     } catch (error) {
 
@@ -48,6 +49,7 @@ const handleIncrease = async (item) => {
         );
 
         setCart(updatedCart);
+        console.log("Handle Increase!!" , updatedCart);
 
     } catch (error) {
 

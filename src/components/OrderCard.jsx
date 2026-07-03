@@ -126,7 +126,6 @@ export default function OrderCard({ order }) {
     <Typography
         fontWeight="bold"
         my={2}
-        color="primary"
 
     >
         Order Status
@@ -151,6 +150,7 @@ export default function OrderCard({ order }) {
     <Typography
         color="text.secondary"
         mb={3}
+        color="primary"
     >
         {order.status}
     </Typography>
