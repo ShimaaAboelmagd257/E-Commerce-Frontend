@@ -4,6 +4,7 @@ import Pagination from "@mui/material/Pagination";
 import ProductCard from "./ProductCard";
 import { getProducts } from "../api/productService";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {Card,Typography,Box}from "@mui/material";
 
 import "swiper/css";
 import "swiper/css/navigation";
