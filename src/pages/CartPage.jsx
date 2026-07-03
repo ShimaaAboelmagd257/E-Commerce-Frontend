@@ -280,7 +280,7 @@ const handleRemoveCartItem = async (productId) => {
 
             <SummaryRow
                 title="Delivery Fee"
-                value={15}
+                value={0}
             />
 
             <Box
@@ -292,7 +292,7 @@ const handleRemoveCartItem = async (productId) => {
 
             <SummaryRow
                 title="Total"
-                value={cart.totalPrice +15}
+                value={cart.totalPrice}
                 bold
                 
             />

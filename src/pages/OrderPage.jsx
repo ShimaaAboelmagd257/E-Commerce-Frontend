@@ -43,6 +43,7 @@ export default function OrdersPage() {
             flex: 1,
             overflow: "hidden",
             backgroundColor: "#f8f8f8",
+    borderRadius: "30px 0 0 30px",
             display: "flex",
           }}
         >
@@ -64,9 +65,11 @@ export default function OrdersPage() {
         <Card
           sx={{
                 flex: 1,
-    borderRadius: "30px 0 0 30px",
     boxShadow: 0,
     display: "flex",
+              justifyContent: "center",
+          alignItems: "center",
+
     flexDirection: "column",
     bgcolor: "#ffffff",
 

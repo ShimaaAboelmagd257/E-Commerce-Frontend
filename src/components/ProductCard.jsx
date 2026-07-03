@@ -44,18 +44,20 @@ export default function ProductCard({product}) {
   return (
     <>
     <Card
-      sx={{
-        width: 280,
-        borderRadius: 4,
-        overflow: "hidden",
-        boxShadow: 2,
-        transition: "all 0.3s ease",
-        "&:hover": {
-          transform: "translateY(-6px)",
-          boxShadow: 8,
-        },
-      }}
-    >
+  sx={{
+    width: "100%",
+    maxWidth: 280,
+    mx: "auto",
+    borderRadius: 4,
+    overflow: "hidden",
+    boxShadow: 2,
+    transition: "all 0.3s ease",
+    "&:hover": {
+      transform: "translateY(-6px)",
+      boxShadow: 8,
+    },
+  }}
+>
       <CardMedia
         component="img"
         height="260"

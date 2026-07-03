@@ -54,10 +54,10 @@ function ProductList() {
             slidesPerView={4}
             navigation
             breakpoints={{
-                0: { slidesPerView: 1 },
-                600: { slidesPerView: 2 },
-                900: { slidesPerView: 3 },
-                1200: { slidesPerView: 4 },
+                0: { slidesPerView: 1.2 },
+                600: { slidesPerView: 2.2 },
+                900: { slidesPerView: 3.2 },
+                1200: { slidesPerView: 4.2 },
             }}
         >
             {products.map(product => (
@@ -101,10 +101,9 @@ function ProductList() {
         <>  
             <Box
     sx={{
-        width:"100%",
-        mt: 5,
-        px: 0,
-        padding : "40px"
+        mt: 3,
+        minHeight:"100vh",
+        p:1,
     }}
 >
         <ProductSwiper
@@ -130,25 +129,26 @@ function ProductList() {
                 variant="h3"
                 sx={{
                     fontWeight: "bold",
+                    mt:"3"
                 }}
             >
                 Explore 
             </Typography>
-            <div
-                style={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    gap: "15px",
-                    padding: "30px",
-                }}
-            >
+         <Box
+    sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 2,
+        mt: 3,
+    }}
+>
 
                 {products.map(product => (
                     <ProductCard
                         product = {product}
                     />
                 ))}
-            </div>
+            </Box>
 
             <div
                 style={{
