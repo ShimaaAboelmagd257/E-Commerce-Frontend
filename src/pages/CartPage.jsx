@@ -197,15 +197,13 @@ const handleRemoveCartItem = async (productId) => {
 
    return (
 
-<Box
-    sx={{
-        
-        padding : "40px",
-        display: "flex",
-        height: "100vh",
-
-    }}
->
+    <Box
+      sx={{
+        bgcolor:"#f5f5f5",
+        minHeight:"100vh",
+        p:10,
+      }}
+    >
 
     <Typography
         variant="h3"
