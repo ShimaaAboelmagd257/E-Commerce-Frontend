@@ -18,20 +18,16 @@ function ProductList() {
     const [totalPages, setTotalPages] = useState(0);
 
 
-    const [featuredProducts, setFeaturedProducts] = useState([]);
     const [newArrivals, setNewArrivals] = useState([]);
     const [bestSellers, setBestSellers] = useState([]);
-    const [specialOffers, setSpecialOffers] = useState([]);
 
     useEffect(() => {
         if (products.length === 0) return;
 
         const shuffled = [...products].sort(() => Math.random() - 0.5);
 
-        setFeaturedProducts(shuffled.slice(0, 8));
         setNewArrivals([...shuffled].reverse().slice(0, 8));
         setBestSellers([...shuffled].sort(() => Math.random() - 0.5).slice(0, 8));
-        setSpecialOffers([...shuffled].sort(() => Math.random() - 0.5).slice(0, 8));
     }, [products]);
 
     const ProductSwiper = ({ title, products }) => (
@@ -99,37 +95,32 @@ function ProductList() {
     return (
         
         <>  
-            <Box
+        <Box
     sx={{
         mt: 3,
         minHeight:"100vh",
-        p:1,
+        p:2,
     }}
 >
-        <ProductSwiper
+ <Box sx={{ mb: 6 }}>
+    <ProductSwiper
         title="🆕 New Arrivals"
         products={newArrivals}
     />
+</Box>
 
+<Box sx={{ mb: 6 }}>
     <ProductSwiper
         title="⭐ Best Sellers"
         products={bestSellers}
     />
+</Box>
 
-    <ProductSwiper
-        title="🔥 Featured Products"
-        products={featuredProducts}
-    />
-
-    <ProductSwiper
-        title="💸 Special Offers"
-        products={specialOffers}
-    />
         <Typography
                 variant="h3"
                 sx={{
                     fontWeight: "bold",
-                    mt:"3"
+                    mb:"6"
                 }}
             >
                 Explore 
@@ -140,6 +131,7 @@ function ProductList() {
         flexWrap: "wrap",
         gap: 2,
         mt: 3,
+        padding:"10px"
     }}
 >
 

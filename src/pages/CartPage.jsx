@@ -292,7 +292,7 @@ const handleRemoveCartItem = async (productId) => {
 
             <SummaryRow
                 title="Total"
-                value={cart.totalPrice}
+                value={cart.totalPrice.toFixed(2)}
                 bold
                 
             />

@@ -340,7 +340,7 @@ Proceed To Payment
 
         <Typography fontWeight="bold">
 
-          ${item.subTotal}
+          ${item.subTotal.toFixed(2)}
 
         </Typography>
 

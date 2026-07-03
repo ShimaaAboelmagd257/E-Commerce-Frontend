@@ -126,6 +126,8 @@ export default function OrderCard({ order }) {
     <Typography
         fontWeight="bold"
         my={2}
+        color="primary"
+
     >
         Order Status
     </Typography>
@@ -178,7 +180,7 @@ export default function OrderCard({ order }) {
             variant="h6"
             fontWeight="bold"
         >
-            ${order.totalPrice}
+            ${order.totalPrice.toFixed(2)}
         </Typography>
 
     </Box>
