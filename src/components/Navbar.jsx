@@ -9,7 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CategoryIcon from "@mui/icons-material/Category";
 import PersonIcon from "@mui/icons-material/Person";
-
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 function Navbar() {
   return (
     <AppBar  
