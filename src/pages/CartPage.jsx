@@ -1,6 +1,6 @@
 import {useEffect, useState}from "react";
 import {Card,Typography,Box,Divider}from "@mui/material";
-import {getCartById, getCartByUserId,removeCartItem,updateCartItemQauntity}from "../api/cartService";
+import {getCartById, getCartByUserId,removeCartItem,updateCartItemQuantity}from "../api/cartService";
 import CartItemCard from "../components/CartItemCard";
 import { createOrderFromCart } from "../api/orderService";
 import Button from "@mui/material/Button";

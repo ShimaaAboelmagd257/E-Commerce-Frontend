@@ -61,7 +61,7 @@ export const removeCartItem = async (cartId,productId) => {
 
     return response.data;
 };
-export const updateCartItemQauntity = async (cartId,productId,quantity) => {
+export const updateCartItemQuantity = async (cartId,productId,quantity) => {
 
     const response =
         await apiClient.put(
