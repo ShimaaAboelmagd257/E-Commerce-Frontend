@@ -74,7 +74,7 @@ export default function OrderCard({ order }) {
         }>
     <Box
         component="img"
-        src={`${API_BASE_URL}${item.productImage}`}
+        src={item.productImage}
         sx={{
             width: 90,
             height: 90,
@@ -107,7 +107,7 @@ export default function OrderCard({ order }) {
             fontWeight: "bold",
         }}
     >
-        ${item.subTotal}
+        ${item.subTotal.toFixed(2)}
     </Typography>
 
 </Box>

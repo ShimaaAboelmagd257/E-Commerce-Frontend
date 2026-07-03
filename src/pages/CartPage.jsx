@@ -203,7 +203,7 @@ const handleRemoveCartItem = async (productId) => {
       sx={{
         bgcolor:"#f5f5f5",
         minHeight:"100vh",
-        p:10,
+        p:4,
       }}
     >
 
@@ -271,7 +271,7 @@ const handleRemoveCartItem = async (productId) => {
 
             <SummaryRow
                 title="Subtotal"
-                value={cart.totalPrice}
+                value={cart.totalPrice.toFixed(2)}
             />
 
             <SummaryRow

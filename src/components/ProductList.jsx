@@ -99,7 +99,7 @@ function ProductList() {
     sx={{
         mt: 3,
         minHeight:"100vh",
-        p:2,
+        p:4,
     }}
 >
  <Box sx={{ mb: 6 }}>

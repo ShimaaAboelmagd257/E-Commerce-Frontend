@@ -36,7 +36,7 @@ function CategoryList() {
         sx={{
           mx: "auto",
           borderRadius: 10,
-          p: 8,
+          p: 4,
         }}
       >
             <Typography

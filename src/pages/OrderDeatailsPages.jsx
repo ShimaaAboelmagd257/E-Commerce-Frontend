@@ -76,7 +76,7 @@ const handlePay = async () => {
     <Box
       sx={{
         bgcolor: "#f5f5f5",
-        p: 5,
+        p: 4,
       }}
     >
 
