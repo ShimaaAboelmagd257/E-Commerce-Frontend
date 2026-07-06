@@ -129,7 +129,7 @@ function ProductList() {
     sx={{
         display: "flex",
         flexWrap: "wrap",
-        gap: 2,
+        gap: 1,
         mt: 3,
         padding:"10px"
     }}
@@ -141,6 +141,12 @@ function ProductList() {
                     />
                 ))}
             </Box>
+                  <Box
+        sx={{
+          borderBottom:"1px solid #ddd",
+          my:3
+        }}
+      />
 
             <div
                 style={{

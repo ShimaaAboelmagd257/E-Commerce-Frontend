@@ -48,12 +48,12 @@ function CategoryList() {
             >
                 Categories
             </Typography>
-        <div
+        <Box
         
             style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: "20px",
+                gap: "25px",
                 
             }}
         >
@@ -68,7 +68,7 @@ function CategoryList() {
 
             ))}
 
-        </div>
+        </Box>
         </Card>
     );
 }
