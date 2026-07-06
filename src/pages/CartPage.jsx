@@ -61,7 +61,7 @@ const handleIncrease = async (item) => {
     const handleCheckout = async () => {
     
     const order =await createOrderFromCart(cart.id);
-    navigate(`/orders` );
+    navigate(`/orders/${order.id}` );
     };
 const handleRemoveCartItem = async (productId) => {
 
@@ -152,7 +152,6 @@ const handleRemoveCartItem = async (productId) => {
             width: 420,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
             textAlign: "left",
           }}
         >

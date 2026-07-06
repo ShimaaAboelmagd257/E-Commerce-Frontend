@@ -53,7 +53,7 @@ function CategoryList() {
             style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: "25px",
+                gap: "27px",
                 justifyContent: "center"
                 
                 
