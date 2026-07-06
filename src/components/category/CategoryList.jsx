@@ -54,6 +54,8 @@ function CategoryList() {
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "25px",
+                justifyContent: "center"
+                
                 
             }}
         >

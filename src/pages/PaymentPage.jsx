@@ -173,6 +173,9 @@ buttonAction =
     display: "flex",
     flexDirection: "column",
     bgcolor: "#ffffff",
+              justifyContent: "center",
+          alignItems: "center",
+
 
             }}
           >
@@ -182,7 +185,7 @@ buttonAction =
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                textAlign: "center",
+                textAlign: "left",
               }}
             >
               <Typography

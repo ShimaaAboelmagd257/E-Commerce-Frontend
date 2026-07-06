@@ -153,7 +153,7 @@ const handleRemoveCartItem = async (productId) => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            textAlign: "center",
+            textAlign: "left",
           }}
         >
           <Typography
