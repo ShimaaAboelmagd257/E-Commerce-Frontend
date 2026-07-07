@@ -61,13 +61,10 @@ export const getOrderStatus = async (
 };
 export const deleteOrder = async (
     orderId
-) => {
+) => {       
 
-    const response =
-        await apiClient.delete(
+    return  await apiClient.delete(
             `/orders/${orderId}`
-        );
-
-    return response.data;
+        );;
 };
 
