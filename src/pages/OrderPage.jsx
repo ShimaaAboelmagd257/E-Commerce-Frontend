@@ -175,7 +175,7 @@ export default function OrdersPage() {
           <OrderCard
             key={order.id}
             order={order}
-            onDelete={ handledeleteOrder}
+            onDelete={ handleDeleteOrder}
             navigate={navigate}
           />
 
