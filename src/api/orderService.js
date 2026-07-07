@@ -59,3 +59,15 @@ export const getOrderStatus = async (
 
     return response.data;
 };
+export const deleteOrder = async (
+    orderId
+) => {
+
+    const response =
+        await apiClient.delete(
+            `/orders/${orderId}`
+        );
+
+    return response.data;
+};
+

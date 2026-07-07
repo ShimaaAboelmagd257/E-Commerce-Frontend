@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {Box,Card,Typography,Stack,Button,LinearProgress,} from "@mui/material";
 import OrderCard from "../components/OrderCard"
 import { useNavigate } from "react-router-dom";
-import { getOrdersByUserId } from "../api/orderService";
+import { getOrdersByUserId,deleteOrder } from "../api/orderService";
 import emptyOrder from "../assets/emptyorder.jpg";
 
 export default function OrdersPage() {
@@ -10,6 +10,17 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
 
   const navigate = useNavigate();
+  
+  const handleDeleteOrder = async (orderId) => {
+  try {
+    await deleteOrder(orderId);
+    setOrders((prev) =>
+      prev.filter((order) => order.id !== orderId)
+    );
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   useEffect(() => {
 
@@ -164,6 +175,7 @@ export default function OrdersPage() {
           <OrderCard
             key={order.id}
             order={order}
+            onDelete={ handledeleteOrder}
             navigate={navigate}
           />
 

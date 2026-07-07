@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { API_BASE_URL } from "../config";
 
-export default function OrderCard({ order }) {
+export default function OrderCard({ order,onDelete }) {
 
   const navigate = useNavigate();
    const progress = () => {
@@ -39,13 +39,32 @@ export default function OrderCard({ order }) {
     }}
 >
 
-    <Typography
-        variant="h5"
-        fontWeight="bold"
-        mb={3}
-    >
-        Order #{order.id}
-    </Typography>
+<Box
+  sx={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    mb: 3,
+  }}
+>
+  <Typography
+    variant="h5"
+    fontWeight="bold"
+  >
+    Order #{order.id}
+  </Typography>
+
+  <IconButton
+    color="error"
+    onClick={() => {
+    if (window.confirm("Delete this order?")) {
+      onDelete(order.id);
+    }
+  }}
+  >
+    <DeleteIcon />
+  </IconButton>
+</Box>
 
     {/* Purchased Items */}
 
