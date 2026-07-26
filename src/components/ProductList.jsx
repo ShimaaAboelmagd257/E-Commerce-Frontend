@@ -46,14 +46,14 @@ function ProductList() {
 
         <Swiper
             modules={[Navigation]}
-            spaceBetween={4}
+            spaceBetween={2}
             slidesPerView={3.5}
             navigation
             breakpoints={{
                 0: { slidesPerView: 1.2 },
                 600: { slidesPerView: 2.2 },
                 900: { slidesPerView: 3.2 },
-                1200: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 },
             }}
         >
             {products.map(product => (
