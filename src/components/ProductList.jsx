@@ -21,14 +21,14 @@ function ProductList() {
     const [newArrivals, setNewArrivals] = useState([]);
     const [bestSellers, setBestSellers] = useState([]);
 
-    useEffect(() => {
-        if (products.length === 0) return;
+useEffect(() => {
+    if (products.length === 0) return;
 
-        const shuffled = [...products].sort(() => Math.random() - 0.5);
+    const shuffled = [...products].sort(() => Math.random() - 0.5);
 
-        setNewArrivals([...shuffled].reverse().slice(0, 8));
-        setBestSellers([...shuffled].sort(() => Math.random() - 0.5).slice(0, 8));
-    }, [products]);
+    setNewArrivals(shuffled.slice(0, 8));
+    setBestSellers(shuffled.slice(8, 16));
+}, [products]);
 
     const ProductSwiper = ({ title, products }) => (
     <>
