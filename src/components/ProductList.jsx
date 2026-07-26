@@ -26,8 +26,8 @@ useEffect(() => {
 
     const shuffled = [...products].sort(() => Math.random() - 0.5);
 
-    setNewArrivals(shuffled.slice(0, 8));
-    setBestSellers(shuffled.slice(8, 16));
+    setNewArrivals(shuffled.slice(0, 5));
+    setBestSellers(shuffled.slice(6, 10));
 }, [products]);
 
     const ProductSwiper = ({ title, products }) => (
