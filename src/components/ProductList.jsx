@@ -46,8 +46,8 @@ function ProductList() {
 
         <Swiper
             modules={[Navigation]}
-            spaceBetween={5}
-            slidesPerView={4}
+            spaceBetween={2}
+            slidesPerView={3.5}
             navigation
             breakpoints={{
                 0: { slidesPerView: 1.2 },

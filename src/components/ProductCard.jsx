@@ -46,7 +46,6 @@ export default function ProductCard({product}) {
     <Card
   sx={{
     width: "100%",
-    maxWidth: 280,
     mx: "auto",
     borderRadius: 4,
     overflow: "hidden",
