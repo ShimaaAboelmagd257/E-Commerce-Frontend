@@ -45,7 +45,7 @@ export default function ProductCard({product}) {
     <>
     <Card
   sx={{
-    width: "100%",
+    width: 330,
     mx: "auto",
     borderRadius: 4,
     overflow: "hidden",
@@ -59,7 +59,7 @@ export default function ProductCard({product}) {
 >
       <CardMedia
         component="img"
-        height="260"
+        height="360"
         image={product.image}   
          alt={product.name}
       />

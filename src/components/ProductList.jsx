@@ -46,14 +46,14 @@ function ProductList() {
 
         <Swiper
             modules={[Navigation]}
-            spaceBetween={2}
+            spaceBetween={4}
             slidesPerView={3.5}
             navigation
             breakpoints={{
                 0: { slidesPerView: 1.2 },
                 600: { slidesPerView: 2.2 },
                 900: { slidesPerView: 3.2 },
-                1200: { slidesPerView: 4.2 },
+                1200: { slidesPerView: 3 },
             }}
         >
             {products.map(product => (
@@ -102,7 +102,7 @@ function ProductList() {
         p:4,
     }}
 >
- <Box sx={{ mb: 6 }}>
+ <Box sx={{width: "100%",py:2, mb: 6 }}>
     <ProductSwiper
         title="🆕 New Arrivals"
         products={newArrivals}
